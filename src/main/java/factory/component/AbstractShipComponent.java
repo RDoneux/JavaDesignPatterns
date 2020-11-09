@@ -2,22 +2,24 @@ package factory.component;
 
 import factory.component.builder.AbstractShipComponentBuilder;
 
+import factory.component.builder.ComponentBuilder;
 import java.util.UUID;
 
-public abstract class AbstractShipComponent implements ShipComponent {
+public abstract class AbstractShipComponent<T extends AbstractShipComponentBuilder<?>> implements ShipComponent {
     private final Integer pointsValue;
     private final Integer health;
     private final Boolean connected;
     private final UUID id;
     private final String name;
 
-    public AbstractShipComponent(AbstractShipComponentBuilder builder) {
+    public AbstractShipComponent(T builder) {
         this.id = builder.getId();
         this.name = builder.getName();
         this.pointsValue = builder.getPointsValue();
         this.health = builder.getHealth();
         this.connected = builder.isConnected();
     }
+
     public Integer getPointsValue() {
         return pointsValue;
     }

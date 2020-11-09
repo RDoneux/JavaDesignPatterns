@@ -1,6 +1,6 @@
 package factory.component.builder;
 
-public class WeaponBuilder extends AbstractShipComponentBuilder {
+public class WeaponBuilder extends AbstractShipComponentBuilder<WeaponBuilder> {
 
     private Integer damageOutput;
 

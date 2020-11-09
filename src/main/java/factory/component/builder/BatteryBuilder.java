@@ -1,6 +1,6 @@
 package factory.component.builder;
 
-public class BatteryBuilder extends AbstractShipComponentBuilder {
+public class BatteryBuilder extends AbstractShipComponentBuilder<BatteryBuilder> {
 
     private Integer powerOutput;
 

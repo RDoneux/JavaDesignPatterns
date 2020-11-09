@@ -2,7 +2,7 @@ package factory.component;
 
 import factory.component.builder.WeaponBuilder;
 
-public class Weapon extends AbstractShipComponent {
+public class Weapon extends AbstractShipComponent<WeaponBuilder> {
 
     private final Integer damageOutput;
 

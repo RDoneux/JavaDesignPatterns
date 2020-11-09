@@ -2,7 +2,7 @@ package factory.component;
 
 import factory.component.builder.BatteryBuilder;
 
-public class Battery extends AbstractShipComponent {
+public class Battery extends AbstractShipComponent<BatteryBuilder> {
     private final Integer powerOutput;
 
     public Battery(BatteryBuilder builder) {

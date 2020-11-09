@@ -2,7 +2,13 @@ package factory.component.builder;
 
 import java.util.UUID;
 
-public abstract class AbstractShipComponentBuilder implements ComponentBuilder {
+/**
+ * The unchecked expressions have been ignored as the binding for T is such that
+ * there can never be a case where it can not cast to T.
+ *
+ * @param <T>
+ */
+public abstract class AbstractShipComponentBuilder<T extends ComponentBuilder<?>> implements ComponentBuilder<T> {
     private Integer pointsValue;
     private Integer health;
     private Boolean connected;
@@ -13,25 +19,31 @@ public abstract class AbstractShipComponentBuilder implements ComponentBuilder {
         // empty
     }
 
-    public ComponentBuilder pointsValue(Integer pointsValue) {
+    public T pointsValue(Integer pointsValue) {
         this.pointsValue = pointsValue;
-        return this;
+        //noinspection unchecked
+        return (T) this;
     }
-    public ComponentBuilder health(Integer health) {
+
+    public T health(Integer health) {
         this.health = health;
-        return this;
+        //noinspection unchecked
+        return (T) this;
     }
-    public ComponentBuilder connected(Boolean connected){
+    public T connected(Boolean connected) {
         this.connected = connected;
-        return this;
+        //noinspection unchecked
+        return (T) this;
     }
-    public ComponentBuilder name (String name) {
+    public T name (String name) {
         this.name = name;
-        return this;
+        //noinspection unchecked
+        return (T) this;
     }
-    public ComponentBuilder id (UUID id) {
+    public T id (UUID id) {
         this.id = id;
-        return this;
+        //noinspection unchecked
+        return (T) this;
     }
 
     public Integer getPointsValue() {

@@ -10,6 +10,9 @@ public class ComponentBuilderFactory {
     }
 
     public static BatteryBuilder battery() {
-        return (BatteryBuilder) new BatteryBuilder().id(UUID.randomUUID());
+        return new BatteryBuilder()
+            .id(UUID.randomUUID())
+            .powerOutput(654)
+            .name("Name");
     }
 }
