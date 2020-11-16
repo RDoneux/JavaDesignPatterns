@@ -1,5 +1,7 @@
 package factory.component.builder;
 
+import factory.component.Component;
+
 import java.util.UUID;
 
 /**
@@ -8,7 +10,7 @@ import java.util.UUID;
  *
  * @param <T>
  */
-public abstract class AbstractShipComponentBuilder<T extends ComponentBuilder<?>> implements ComponentBuilder<T> {
+public abstract class AbstractShipComponentBuilder<U extends Component, T extends ComponentBuilder<U,?>> implements ComponentBuilder<U,T> {
     private Integer pointsValue;
     private Integer health;
     private Boolean connected;

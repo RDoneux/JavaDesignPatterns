@@ -1,8 +1,11 @@
 package factory.component.builder;
 
+import factory.component.AbstractShipComponent;
+import factory.component.Component;
+
 import java.util.UUID;
 
-public interface ComponentBuilder<T extends ComponentBuilder<?>> {
+public interface ComponentBuilder<U extends Component, T extends ComponentBuilder<U, ?>> {
 
     T id (UUID id);
     T name (String name);
@@ -15,4 +18,6 @@ public interface ComponentBuilder<T extends ComponentBuilder<?>> {
     Boolean isConnected();
     Integer getHealth();
     Integer getPointsValue();
+
+    U build();
 }

@@ -1,6 +1,8 @@
 package factory.component.builder;
 
-public class WeaponBuilder extends AbstractShipComponentBuilder<WeaponBuilder> {
+import factory.component.Weapon;
+
+public class WeaponBuilder extends AbstractShipComponentBuilder<Weapon, WeaponBuilder> {
 
     private Integer damageOutput;
 
@@ -15,5 +17,10 @@ public class WeaponBuilder extends AbstractShipComponentBuilder<WeaponBuilder> {
 
     public Integer getDamageOutput() {
         return damageOutput;
+    }
+
+    @Override
+    public Weapon build() {
+        return new Weapon(this);
     }
 }

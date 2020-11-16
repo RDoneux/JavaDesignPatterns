@@ -5,7 +5,7 @@ import factory.component.builder.AbstractShipComponentBuilder;
 import factory.component.builder.ComponentBuilder;
 import java.util.UUID;
 
-public abstract class AbstractShipComponent<T extends AbstractShipComponentBuilder<?>> implements ShipComponent {
+public abstract class AbstractShipComponent<T extends AbstractShipComponentBuilder<?,?>> implements ShipComponent {
     private final Integer pointsValue;
     private final Integer health;
     private final Boolean connected;

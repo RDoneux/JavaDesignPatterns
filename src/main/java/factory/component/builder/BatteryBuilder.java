@@ -1,6 +1,8 @@
 package factory.component.builder;
 
-public class BatteryBuilder extends AbstractShipComponentBuilder<BatteryBuilder> {
+import factory.component.Battery;
+
+public class BatteryBuilder extends AbstractShipComponentBuilder<Battery, BatteryBuilder> {
 
     private Integer powerOutput;
 
@@ -17,4 +19,8 @@ public class BatteryBuilder extends AbstractShipComponentBuilder<BatteryBuilder>
         return powerOutput;
     }
 
+    @Override
+    public Battery build() {
+        return new Battery(this);
+    }
 }
